@@ -1,0 +1,21 @@
+
+
+img { 
+    border-radius: 5px;
+}
+
+.container {
+    border: 2px solid silver;
+}
+
+.row {
+    padding-top: 15px;
+    padding-right: 70px;
+    padding-bottom: 10px;
+    margin-left: auto;
+}
+
+img:hover {  
+    transition: transform 1s;
+	transform: scale(1.5);
+}
