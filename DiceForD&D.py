@@ -1,51 +1,30 @@
 
+# AUTHOR:       Derek Pruitt
+
+#PYTHON:        3.8.3
+
+# For D&D use, eventualy make it a app whith more programs
+
 import random
 
-        
-class Dice():
-    _Dice20 = random.randrange(1,21)
-    __Dice12 = random.randrange(1,13)
-    Dice100 = random.randrange(1,101)
-    Dice10 = random.randrange(1,11)
-    Dice8 = random.randrange(1,9)
-    Dice6 = random.randrange(1,7)
-    Dice4 = random.randrange(1,5)
-    Dice3 = random.randrange(1,4)
-    def useDice():
-            D = input("Please select D100, D20, D12, D10, D8, D6, D4, D3...\n   >")
-            if D == 'D12':
-                print('{}'.format(Dice.__Dice12))
-                Dice.useDice()
-            elif D == 'D20':
-                print('{}'.format(Dice._Dice20))
-                Dice.useDice()
-            elif D == 'D100':
-                print('{}'.format(Dice.Dice100))
-                Dice.useDice()
-            elif D == 'D10':
-                print('{}'.format(Dice.Dice10))
-                Dice.useDice()
-            elif D == 'D8':
-                print('{}'.format(Dice.Dice8))
-                Dice.useDice()
-            elif D == 'D6':
-                print('{}'.format(Dice.Dice6))
-                Dice.useDice()
-            elif D == 'D4':
-                print('{}'.format(Dice.Dice4))
-                Dice.useDice()
-            elif D == 'D3':
-                print('{}'.format(Dice.Dice3))
-                Dice.useDice()
-            else:
-                print('You did not select a D100, D20, D12, D10, D8, D6, D4, D3\n')
-                YorN = input('Use again? Y/N\n')
-                if YorN == 'Y':
-                    Dice.useDice()
-                else:
-                    quit()
-                
+def use_dice():
+    while True: # Will keep running until stopped with "break" statement
+        d_in = input("Please select D100, D20, D12, D10, D8, D6, D4, D3...\n   >")
+        result = None
+        if d_in == 'D12':
+            result = random.randrange(1,13)
+        elif d_in == 'D20':
+            result = random.randrange(1,21)
+        elif MORE DICE:
+            ## Do stuff
+        else:
+            print('You did not select a D100, D20, D12, D10, D8, D6, D4, D3\n')
+            yes_or_no = input('Use again? Y/N\n')
+            if yes_or_no != 'Y': # If anything but Y is given, end loop
+                break ## The loop will stop if this line is reached
+                ## Note no use of quit(), as we may want execution to be returned to us
 
+        if result is not None:
+            print('{}'.format(result))
 
-if __name__ == '__main__':
-    Dice.useDice()
+    print('Goodbye') ## This will execute just before function exits
